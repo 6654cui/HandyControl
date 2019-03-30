@@ -16,7 +16,7 @@ using Microsoft.Win32;
 
 namespace HandyControl.Controls
 {
-    [TemplatePart(Name = ElementGridMain, Type = typeof(Grid))]
+    [TemplatePart(Name = ElementPanelMain, Type = typeof(Panel))]
     [TemplatePart(Name = ElementCanvasSmallImg, Type = typeof(Canvas))]
     [TemplatePart(Name = ElementBorderMove, Type = typeof(Border))]
     [TemplatePart(Name = ElementBorderBottom, Type = typeof(Border))]
@@ -25,7 +25,7 @@ namespace HandyControl.Controls
     {
         #region Constants
 
-        private const string ElementGridMain = "PART_GridMain";
+        private const string ElementPanelMain = "PART_PanelMain";
 
         private const string ElementCanvasSmallImg = "PART_CanvasSmallImg";
 
@@ -52,7 +52,7 @@ namespace HandyControl.Controls
             Filter = $"{Lang.PngImg}|*.png"
         };
 
-        private Grid _gridMain;
+        private Panel _panelMain;
 
         private Canvas _canvasSmallImg;
 
@@ -197,7 +197,7 @@ namespace HandyControl.Controls
             }
             catch
             {
-                PopupWindow.ShowDialog(Lang.ErrorImgPath);
+                MessageBox.Show(Lang.ErrorImgPath);
             }
         }
 
@@ -401,7 +401,7 @@ namespace HandyControl.Controls
 
             base.OnApplyTemplate();
 
-            _gridMain = GetTemplateChild(ElementGridMain) as Grid;
+            _panelMain = GetTemplateChild(ElementPanelMain) as Panel;
             _canvasSmallImg = GetTemplateChild(ElementCanvasSmallImg) as Canvas;
             _borderMove = GetTemplateChild(ElementBorderMove) as Border;
             _imageMain = GetTemplateChild(ElementImageMain) as Image;
@@ -464,7 +464,7 @@ namespace HandyControl.Controls
 
             if (Math.Abs(height - 0) < 0.001 || Math.Abs(width - 0) < 0.001)
             {
-                PopupWindow.ShowDialog(Lang.ErrorImgSize);
+                MessageBox.Show(Lang.ErrorImgSize);
                 return;
             }
 
@@ -544,7 +544,7 @@ namespace HandyControl.Controls
             }
             catch (Exception exception)
             {
-                PopupWindow.ShowDialog(exception.Message);
+                MessageBox.Show(exception.Message);
             }
         }
 
@@ -610,7 +610,7 @@ namespace HandyControl.Controls
 
         private void ImageMain_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            _imgMouseDownPoint = Mouse.GetPosition(_gridMain);
+            _imgMouseDownPoint = Mouse.GetPosition(_panelMain);
             _imgMouseDownMargin = ImageMargin;
             _imgIsMouseLeftButtonDown = true;
         }
@@ -705,7 +705,7 @@ namespace HandyControl.Controls
 
             ImageScale = tempScale;
 
-            var posCanvas = Mouse.GetPosition(_gridMain);
+            var posCanvas = Mouse.GetPosition(_panelMain);
             var posImg = new Point(posCanvas.X - _imgActualMargin.Left, posCanvas.Y - _imgActualMargin.Top);
 
             var marginX = .5 * _scaleInternalWidth;
@@ -789,7 +789,7 @@ namespace HandyControl.Controls
         /// </summary>
         private void MoveImg()
         {
-            _imgCurrentPoint = Mouse.GetPosition(_gridMain);
+            _imgCurrentPoint = Mouse.GetPosition(_panelMain);
             ShowCloseButton = _imgCurrentPoint.Y < 200;
             ShowBorderBottom = _imgCurrentPoint.Y > ActualHeight - 200;
 

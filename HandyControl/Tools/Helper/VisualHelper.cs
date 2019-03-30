@@ -4,11 +4,11 @@ using System.Windows.Media;
 
 namespace HandyControl.Tools
 {
-    internal class VisualHelper
+    public class VisualHelper
     {
-        public static VisualStateGroup TryGetVisualStateGroup(DependencyObject dependencyObject, string groupName)
+        internal static VisualStateGroup TryGetVisualStateGroup(DependencyObject d, string groupName)
         {
-            var root = GetImplementationRoot(dependencyObject);
+            var root = GetImplementationRoot(d);
             if (root == null)
             {
                 return null;
@@ -20,11 +20,35 @@ namespace HandyControl.Tools
                 .FirstOrDefault(group => string.CompareOrdinal(groupName, group.Name) == 0);
         }
 
-        public static FrameworkElement GetImplementationRoot(DependencyObject dependencyObject)
+        internal static FrameworkElement GetImplementationRoot(DependencyObject d)
         {
-            return 1 == VisualTreeHelper.GetChildrenCount(dependencyObject)
-                ? VisualTreeHelper.GetChild(dependencyObject, 0) as FrameworkElement
+            return 1 == VisualTreeHelper.GetChildrenCount(d)
+                ? VisualTreeHelper.GetChild(d, 0) as FrameworkElement
                 : null;
         }
+
+        internal static T GetChild<T>(DependencyObject d) where T : DependencyObject
+        {
+            if (d is T t)
+            {
+                return t;
+            }
+
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(d); i++)
+            {
+                var child = VisualTreeHelper.GetChild(d, i);
+
+                var result = GetChild<T>(child);
+                if (result != null) return result;
+            }
+
+            return default(T);
+        }
+
+        /// <summary>
+        ///     获取当前应用中处于激活的一个窗口
+        /// </summary>
+        /// <returns></returns>
+        public static Window GetActiveWindow() => Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
     }
 }

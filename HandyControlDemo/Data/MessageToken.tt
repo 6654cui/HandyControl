@@ -21,7 +21,7 @@ var controlList = new List<string>
 	"WindowDemoCtl",
 	"ScrollViewerDemoCtl",
 	"PreviewSliderDemoCtl",
-	"CircleProgressBarDemoCtl",
+	"ProgressBarDemoCtl",
 	"TextBoxDemoCtl",
 	"ComboBoxDemoCtl",
 	"PasswordBoxDemoCtl",
@@ -40,22 +40,29 @@ var controlList = new List<string>
 	"ShieldDemoCtl",
 	"WaterfallPanelDemoCtl",
 	"CoverViewDemoCtl",
-	"CoverFlowDemoCtl"
+	"CoverFlowDemoCtl",
+	"ProgressButtonDemoCtl",
+	"TransferDemoCtl",
+	"ChatBubbleDemoCtl",
+	"GotoTopDemoCtl",
+	"BadgeDemoCtl",
+	"GravatarDemoCtl",
+	"DialogDemoCtl"
 };
 var styleList = new List<string>
 {
 	"ButtonDemoCtl",
 	"ToggleButtonDemoCtl",
 	"ExpanderDemoCtl",
-	"ProgressBarDemoCtl",
+	"NativeProgressBarDemoCtl",
 	"TabControlDemoCtl",
 	"CalendarDemoCtl",
-	"NaiveDatePickerDemoCtl",
-	"NaiveTextBoxDemoCtl",
+	"NativeDatePickerDemoCtl",
+	"NativeTextBoxDemoCtl",
 	"TextBlockDemoCtl",
-	"NaiveComboBoxDemoCtl",
-	"NaivePasswordBoxDemoCtl",
-	"NaiveTabControlDemoCtl",
+	"NativeComboBoxDemoCtl",
+	"NativePasswordBoxDemoCtl",
+	"NativeTabControlDemoCtl",
 	"DataGridDemoCtl",
 	"CheckBoxDemoCtl",
 	"ListBoxDemoCtl",
@@ -63,18 +70,27 @@ var styleList = new List<string>
 	"TreeViewDemoCtl",
 	"BorderDemoCtl",
 	"RadioButtonDemoCtl",
-	"NaiveScrollViewerDemoCtl",
+	"NativeScrollViewerDemoCtl",
 	"BrushDemoCtl",
 	"SliderDemoCtl",
 	"GroupBoxDemoCtl",
 	"ListViewDemoCtl",
 	"RichTextBoxDemoCtl",
-	"ToolBarDemoCtl"
+	"ToolBarDemoCtl",
+	"LabelDemoCtl"
 };
 var windowList = new List<string>
 {
 	"CommonWindow",
 	"CustomNonClientAreaWindow"
+};
+var messageList = new List<string>
+{
+	"LoadShowContent",
+	"FullSwitch",
+	"ContributorsView",
+	"ClearLeftSelected",
+	"SendChatMessage"
 };
 #>
 namespace HandyControlDemo.Data
@@ -93,12 +109,9 @@ namespace HandyControlDemo.Data
     public static readonly string <#=item#> = nameof(<#=item#>);
 
     <#}#>
-	public static readonly string LoadShowContent = nameof(LoadShowContent);
+<#foreach(var item in messageList){#>
+    public static readonly string <#=item#> = nameof(<#=item#>);
 
-		public static readonly string FullSwitch = nameof(FullSwitch);
-
-		public static readonly string ContributorsView = nameof(ContributorsView);
-
-		public static readonly string ClearLeftSelected = nameof(ClearLeftSelected);
-	}
+    <#}#>
+}
 }

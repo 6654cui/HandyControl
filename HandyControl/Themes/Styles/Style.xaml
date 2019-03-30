@@ -2,6 +2,8 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Window.xaml"/>
+        <ResourceDictionary Source="PopupWindow.xaml"/>
+        <ResourceDictionary Source="MessageBox.xaml"/>
         <ResourceDictionary Source="Button.xaml"/>
         <ResourceDictionary Source="ToggleButton.xaml"/>
         <ResourceDictionary Source="TextBlock.xaml"/>
@@ -52,6 +54,13 @@
         <ResourceDictionary Source="Shield.xaml"/>
         <ResourceDictionary Source="CoverView.xaml"/>
         <ResourceDictionary Source="CoverFlow.xaml"/>
+        <ResourceDictionary Source="ProgressButton.xaml"/>
+        <ResourceDictionary Source="Transfer.xaml"/>
+        <ResourceDictionary Source="ChatBubble.xaml"/>
+        <ResourceDictionary Source="GotoTop.xaml"/>
+        <ResourceDictionary Source="Gravatar.xaml"/>
+        <ResourceDictionary Source="Badge.xaml"/>
+        <ResourceDictionary Source="Dialog.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

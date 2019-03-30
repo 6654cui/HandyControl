@@ -90,4 +90,13 @@
         </WrapPanel>
     </ItemsPanelTemplate>
 
+    <Style x:Key="MessageBoxCustom" TargetType="controls:MessageBox" BasedOn="{StaticResource {x:Type controls:MessageBox}}">
+        <Setter Property="NonClientAreaBackground" Value="#262e2f"/>
+        <Setter Property="OtherButtonHoverBackground" Value="#888580"/>
+        <Setter Property="OtherButtonForeground" Value="White"/>
+        <Setter Property="OtherButtonHoverForeground" Value="White"/>
+        <Setter Property="NonClientAreaForeground" Value="White"/>
+        <Setter Property="CloseButtonForeground" Value="White"/>
+    </Style>
+
 </ResourceDictionary>

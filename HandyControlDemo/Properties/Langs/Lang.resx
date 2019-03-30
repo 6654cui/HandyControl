@@ -387,9 +387,6 @@
   <data name="Slider" xml:space="preserve">
     <value>滑块</value>
   </data>
-  <data name="CircleProgressBar" xml:space="preserve">
-    <value>圆形进度条</value>
-  </data>
   <data name="IsNotPhone" xml:space="preserve">
     <value>不是手机号码</value>
   </data>
@@ -462,10 +459,73 @@
   <data name="CoverFlow" xml:space="preserve">
     <value>封面流</value>
   </data>
+  <data name="PlsEnterKey" xml:space="preserve">
+    <value>请输入关键字</value>
+  </data>
   <data name="OpenNoNonClientAreaDragableWindow" xml:space="preserve">
     <value>打开无非客户端区域可拖拽窗口</value>
   </data>
   <data name="DragHere" xml:space="preserve">
     <value>在这里拖拽</value>
+  </data>
+  <data name="MessageBox" xml:space="preserve">
+    <value>消息框</value>
+  </data>
+  <data name="ProgressButton" xml:space="preserve">
+    <value>进度按钮</value>
+  </data>
+  <data name="UploadStr" xml:space="preserve">
+    <value>上传;上传中</value>
+  </data>
+  <data name="OpenCustomMessageWindow" xml:space="preserve">
+    <value>点击打开自定义消息窗口</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>穿梭框</value>
+  </data>
+  <data name="ChatBubble" xml:space="preserve">
+    <value>对话气泡</value>
+  </data>
+  <data name="PushToTalk" xml:space="preserve">
+    <value>按住说话</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>标签</value>
+  </data>
+  <data name="GotoTop" xml:space="preserve">
+    <value>回到顶部</value>
+  </data>
+  <data name="Badge" xml:space="preserve">
+    <value>标记</value>
+  </data>
+  <data name="Gravatar" xml:space="preserve">
+    <value>头像</value>
+  </data>
+  <data name="ComingSoon" xml:space="preserve">
+    <value>敬请期待</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>评论</value>
+  </data>
+  <data name="Reply" xml:space="preserve">
+    <value>回复</value>
+  </data>
+  <data name="Dialog" xml:space="preserve">
+    <value>对话框</value>
+  </data>
+  <data name="TextDialog" xml:space="preserve">
+    <value>文本对话框</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>请稍后...</value>
+  </data>
+  <data name="GrowlDemo" xml:space="preserve">
+    <value>消息通知示例</value>
+  </data>
+  <data name="NewWindow" xml:space="preserve">
+    <value>新建窗口</value>
   </data>
 </root>
